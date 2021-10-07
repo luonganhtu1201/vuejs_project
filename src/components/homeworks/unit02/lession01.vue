@@ -3,14 +3,14 @@
     <div class="search-wrapper">
       <div class="search-box">
         <input type="text" placeholder="Tìm kiếm theo tên sản phẩm" v-model="search"
-               @keyup.enter="searchProduct()">
+               @keyup.enter="searchItem()">
         <div class="search-icon">
           <div class="search">
             <div class="search-circle"></div>
             <div class="search-rectangle"></div>
           </div>
         </div>
-        <div class="close-icon" v-if="isClose" @click="deleteAll()">
+        <div class="close-icon" v-if="closeX" @click="deleteAll()">
           <div class="close">
             <div class="right"></div>
             <div class="left"></div>
@@ -26,11 +26,11 @@
         <th>Số lượng</th>
         <th>Trạng thái</th>
       </tr>
-      <tr v-for="(product, index) in productData" :key="index">
+      <tr v-for="(item, index) in dataSearch" :key="index">
         <td>{{ index + 1 }}</td>
         <td class="productName">
-          <img :src="product.image" alt="">
-          <a href="#">{{product.name}}</a>
+          <img :src="item.image" alt="">
+          <a href="#">{{item.name}}</a>
         </td>
         <td>
           {{
@@ -38,16 +38,16 @@
               style: 'currency',
               currency: 'VND',
               minimumFractionDigits: 0
-            }).format(product.price)
+            }).format(item.price)
           }}
         </td>
-        <td>{{ product.quantity }}</td>
+        <td>{{ item.quantity }}</td>
         <td>
-          <span v-if="product.isAvailable" style="color: #96e2c2">Còn hàng</span>
+          <span v-if="item.isAvailable" style="color: #96e2c2">Còn hàng</span>
           <span v-else style="color: #f74c4c">Hết hàng</span>
         </td>
       </tr>
-      <tr v-if="productData.length === 0">
+      <tr v-if="dataSearch.length === 0">
         <td colspan="5">Không có dữ liệu</td>
       </tr>
     </table>
@@ -97,7 +97,7 @@ export default {
           isAvailable: true
         }
       ],
-      productData: [
+      dataSearch: [
         {
           name: 'iPhone 12 Pro Max Chính Hãng',
           image: 'https://cdn.cellphones.com.vn/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/h/photo_2020-10-13_22-12-24.jpg_1_2.png',
@@ -134,30 +134,30 @@ export default {
           isAvailable: true
         }
       ],
-      isClose: false
+      closeX: false
     }
   },
   methods: {
     deleteAll() {
       this.search = ''
     },
-    searchProduct() {
+    searchItem() {
       let str = this.search.trim().toLowerCase()
-      this.productData = []
+      this.dataSearch = []
       if (this.search === '') {
-        this.productData = this.products
+        this.dataSearch = this.products
       } else {
-        this.productData = this.products.filter(data => data.name.toLowerCase().indexOf(str) !== -1);
+        this.dataSearch = this.products.filter(data => data.name.toLowerCase().indexOf(str) !== -1);
       }
     }
   },
   watch: {
     search(value) {
       if (value !== '') {
-        this.isClose = true
+        this.closeX = true
       } else {
-        this.isClose = false
-        this.productData = this.products
+        this.closeX = false
+        this.dataSearch = this.products
       }
     }
   }
