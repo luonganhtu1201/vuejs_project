@@ -3,6 +3,7 @@
   <div class="wrap-1">
     <ProductForm @createProduct="receiveItem" :editProduct="editProduct"></ProductForm>
   </div>
+  
   <div class="wrap-2">
     <ProductList @editProduct="editItem" :products="products"></ProductList>
   </div>
