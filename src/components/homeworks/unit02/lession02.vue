@@ -32,7 +32,6 @@
         </tr>
       </table>
     </div>
-    
     <div class="cart">
       <h4>Giỏ hàng</h4>
       <div class="addProduct">

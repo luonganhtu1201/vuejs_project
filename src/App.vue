@@ -6,7 +6,8 @@
 <!--    <ProductPage/>-->
 <!--    <NewsDetailPage/>-->
 <!--    <Todo/>-->
-    <Lession01/>
+<!--    <Lession01/>-->
+    <Exercise/>
   </div>
 </template>
 
@@ -16,8 +17,9 @@
 // import HelloWorld from './components/homeworks/unit01/lesson01'
 // import HelloWorld from './components/homeworks/unit01/lesson02'
 // -----------Unit 02------------
-import Lession01 from "./components/homeworks/unit02/lession01";
+// import Lession01 from "./components/homeworks/unit02/lession01";
 // import Lession02 from "./components/homeworks/unit02/lession02";
+import Exercise from "./components/homeworks/unit03/lession02/Exercise";
 // -----------Unit 03------------
 //  import Todo from "./components/homeworks/unit03/lession01/Todo";
 // -----------Unit 04 -----------
@@ -27,8 +29,9 @@ import Lession01 from "./components/homeworks/unit02/lession01";
 export default {
   name: 'App',
   components: {
+    Exercise,
     // Todo,
-    Lession01
+    // Lession01,
     // NewsDetailPage,
     // ProductPage,
     // Lession02
