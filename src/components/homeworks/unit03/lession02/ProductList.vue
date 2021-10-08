@@ -26,6 +26,9 @@
       <button class="destroyProduct" @click="destroyItem(index)">Xóa</button>
     </td>
   </tr>
+  <tr v-if="products.length === 0">
+    <td colspan="6">Không có dữ liệu</td>
+  </tr>
 </table>
 </template>
 

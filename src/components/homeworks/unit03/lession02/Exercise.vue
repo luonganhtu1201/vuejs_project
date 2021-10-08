@@ -30,13 +30,25 @@ export default {
   },
   methods:{
     receiveItem:function(data){
-      data.id = this.products.length
-      if (data.quantity === 0){
+      if (parseInt(data.quantity) === 0){
         data.isAvailable = false
       }else{
         data.isAvailable = true
       }
-      this.products.push(data)
+      if (data.id === -1){
+        data.id = this.products.length
+        this.products.push(data)
+      }else{
+        this.products[data.id].id = data.id
+        this.products[data.id].name = data.name
+        this.products[data.id].isAvailable = data.isAvailable
+        this.products[data.id].quantity = data.quantity
+        this.products[data.id].unitPrice = data.unitPrice
+      }
+      this.products.push([])
+      let last = this.products.length - 1;
+      this.products.splice(last, 1);
+      console.log(this.products)
     },
     editItem:function (data){
       this.editProduct.id = data.id
@@ -44,7 +56,6 @@ export default {
       this.editProduct.isAvailable = data.isAvailable
       this.editProduct.quantity = data.quantity
       this.editProduct.unitPrice = data.unitPrice
-      console.log(this.editProduct)
       return this.editProduct
     }
   }
