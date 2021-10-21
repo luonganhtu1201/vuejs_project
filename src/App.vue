@@ -9,12 +9,15 @@
 <!--      <Baselayout/>-->
     </div>
     <router-view/>
+<!--    <Base/>-->
   </div>
 </template>
 <script>
 // import Baselayout from "./components/homeworks/unit05/BaseLayout";
+// import Base from "./components/productTest/Base";
 export default {
   name: "App",
+  // components: {Base},
   // components: { Baselayout},
   data(){
     return{

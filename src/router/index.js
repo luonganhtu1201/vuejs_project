@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Home from '../views/Home.vue'
+import Base from '../components/productTest/Base.vue'
+import productDetail from '../components/productTest/productDetail.vue'
 import Profile from '../views/Profile.vue'
 import Post from '../views/Post.vue'
 import BaseLayout from '../components/homeworks/unit05/BaseLayout.vue'
@@ -14,15 +15,34 @@ import Revenue from '../components/homeworks/unit05/Revenue.vue'
 import Inventory from '../components/homeworks/unit05/Inventory.vue'
 import SystemPage from '../components/homeworks/unit05/SystemPage.vue'
 import Login from '../components/homeworks/unit05/Login.vue'
+import Home from  '../components/HelloWorld.vue'
+import FormTodo from  '../components/FormTodo.vue'
 
+// Unit07
+import Cart from '../components/homeworks/unit07/lesision01/Cart.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  // {
-  //   path: '/',
-  //   name: 'Home',
-  //   component: Home
-  // },
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/todo',
+    name: 'FormTodo',
+    component: FormTodo
+  },
+  {
+    path: '/base',
+    name: 'Base',
+    component: Base
+  },
+  {
+    path: '/product-detail',
+    name: 'productDetail',
+    component: productDetail
+  },
   {
     path: '/about',
     name: 'About',
@@ -100,6 +120,12 @@ const routes = [
     component: SystemPage
   },
 
+    // unit07
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: Cart
+  },
 ]
 
 const router = new VueRouter({
