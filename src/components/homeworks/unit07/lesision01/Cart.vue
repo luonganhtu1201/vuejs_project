@@ -18,24 +18,7 @@ export default {
     }
   },
   methods:{
-    deleteProduct(id){
-      this.listCart.splice(id, 1);
-      let data = this.listCart;
-      this.total = 0;
-      for (let i = 0 ; i < data.length;i++){
-        this.total += data[i].soluong*data[i].price
-      }
-    },
-    changeCart(id){
-      let data = this.listCart;
-      if(data[id].soluong <= 0){
-        this.listCart.splice(id, 1);
-      }
-      this.total = 0;
-      for (let i = 0 ; i < data.length;i++){
-        this.total += data[i].soluong*data[i].price
-      }
-    }
+
   },
 }
 </script>

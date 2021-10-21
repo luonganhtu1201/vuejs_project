@@ -20,6 +20,7 @@ import FormTodo from  '../components/FormTodo.vue'
 
 // Unit07
 import Cart from '../components/homeworks/unit07/lesision01/Cart.vue'
+import Exercise from '../components/homeworks/unit07/lesision02/Exercise.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -125,6 +126,11 @@ const routes = [
     path: '/cart',
     name: 'Cart',
     component: Cart
+  },
+  {
+    path: '/exercise',
+    name: 'Exercise',
+    component: Exercise
   },
 ]
 

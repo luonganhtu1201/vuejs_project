@@ -59,6 +59,16 @@ const store = new Vuex.Store({
         ],
         cartOut:[],
         total:'',
+
+        editProduct:{
+            code:'',
+            id:'',
+            name:'',
+            isAvailable:false,
+            quantity:'',
+            unitPrice:''
+        },
+        products:[],
     },
     getters: {
         doneTodos: (state) => {
@@ -110,6 +120,23 @@ const store = new Vuex.Store({
         deleteProductStore(state,value){
             state.cartOut.splice(value, 1);
         },
+
+
+        addProductStore(state,value){
+            state.products.push(value)
+        },
+        updateDragProduct(state,value){
+            state.editProduct = value
+        },
+        updateOldProduct(state,value){
+            state.products[value.code].name = value.name
+            state.products[value.code].quantity = value.quantity
+            state.products[value.code].unitPrice = value.unitPrice
+            state.products[value.code].isAvailable = value.isAvailable
+        },
+        destroyProduct(state,value){
+            state.products.splice(value,1)
+        }
     }
 })
 
