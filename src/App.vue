@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-<!--      <router-link to="/">Home</router-link> |-->
-<!--      <router-link to="/about">About</router-link> |-->
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> |
 <!--      <router-link :to="`/detail/${userId}`">Detail</router-link>-->
 <!--      <button @click="pushToProfile()">Push to Profile</button>-->
 <!--      <button @click="pushToPost()">Push to Post</button>-->
