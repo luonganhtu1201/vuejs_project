@@ -221,6 +221,18 @@ const routes = [
     name: 'ProductView',
     component: () => import('../components/homeworks/unit09/ProductView')
   },
+    //Unit 10
+  {
+    path: '/unit11',
+    name: 'task01',
+    component: () => import('../components/homeworks/unit10/lession01/task01')
+  },
+    //Unit 10
+  {
+    path: '/unit10',
+    name:'Upload',
+    component: () => import('../components/homeworks/unit10/lession02/Upload')
+  }
 ]
 
 const router = new VueRouter({
